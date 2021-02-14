@@ -8,6 +8,7 @@ html{
   align-items: center;
   justify-content: center;
   background-image:url('/image/main.jpg');
+  background-size:100% 100%;
   background-color: #08298A;
 }
 h1{
