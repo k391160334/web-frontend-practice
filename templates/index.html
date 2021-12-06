@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <h1>게임 이름</h1>
+    <form class="puppyInfo" action="/" method="post">
+        <div class="margin" style="width:300px;">
+            <div class="inputDiv flex">
+              <label for="user">이름:</label>
+              <input type="text" name="user">
+            </div>
+            <div class="inputDiv flex">
+              <label for="age">나이:</label>
+              <input type="text" name="age">
+            </div>
+            <div class="inputDiv flex">
+              <label for="snack">좋아하는 간식:</label>
+              <input type="text" name="snack">
+            </div>
+            <div class="inputDiv flex">
+              <label for="gender">성별:</label>
+              <input type="text" name="gender">
+            </div>
+            <div class="submitDiv margin">
+              <button class="" type="submit">제출</button>
+            </div>
+        </div>
+    </form>
+<!--
+이름 : user
+나이 : data.age
+좋아하는 간식 : data.snack
+성별 : data.gender
+-->
+
+</body>
+</html>
