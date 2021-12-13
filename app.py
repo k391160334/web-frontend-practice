@@ -1,11 +1,25 @@
 from flask import Flask, render_template,request,redirect,url_for
+import random
 
 app = Flask(__name__)
+
+class Dog:
+    def __init__(self,name):
+        l1 = ['E', 'I']
+        l2 = ['S', 'N']
+        l3 = ['T', 'F']
+        l4 = ['P', 'J']
+        self.mbti = random.choice(l1) + random.choice(l2) + random.choice(l3) + random.choice(l4)
+        self.dog_name=name
+    def getname(self):
+        return self.dog_name
+    def getmbti(self):
+        return self.mbti
 userName=''
 age=0
 snack=''
 gender=''
-mbti=''
+myDog=Dog('')
 
 @app.route("/",methods=['GET','POST'])
 def home():
@@ -15,32 +29,33 @@ def home():
         return render_template('index.html')
     else:
         # 입력받은 데이터를 전역변수에 저장
-        global userName,age,snack,gender
-        userName=request.form['user']
+        global userName,age,snack,gender,myDog
+        userName=request.form['userName']
+        myDog=Dog(request.form['dogName'])
         age=request.form['age']
         snack=request.form['snack']
         gender=request.form['gender']
         # startGame 페이지 띄우기
-        return redirect(url_for('menu_table',_external=True))
+        return redirect(url_for('menu_table'))
 
 @app.route("/menu_table")
 def menu_table():
-    return render_template('menu_table.html')
+    return render_template('menu_table.html',dogName=myDog.getname())
 
 @app.route("/meal")
 def enterMeal():
     return render_template('meal.html')
 
 @app.route("/goWalk")
-def enterMeal():
+def enterGoWalk():
     return render_template('goWalk.html')
 
 @app.route("/snack")
-def enterMeal():
+def enterSnack():
     return render_template('snack.html')
 
 @app.route("/ending")
-def enterMeal():
+def enterEnding():
     return render_template('ending.html')
 
 

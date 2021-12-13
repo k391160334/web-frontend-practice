@@ -22,7 +22,7 @@ class Main_story:
         dog_name=input("강아지 이름을 입력하세요: ")
         self.dog=Dog(dog_name)
         self.intro()
-    def intro(self):
+    def intro(self):    #menu_table에 포함
         print("\n당신과 오늘 함께할 강아지 {}입니다.".format(self.dog.getname()))
         print("나이: {}".format(3))
         print("좋아하는 간식: {}".format("뼈다귀"))
