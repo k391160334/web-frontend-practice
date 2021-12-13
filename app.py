@@ -20,7 +20,8 @@ age=0
 snack=''
 gender=''
 myDog=Dog('')
-
+def dogToDict(d):
+    return {'name':d.getname(),'mbti':d.getmbti()}
 @app.route("/",methods=['GET','POST'])
 def home():
     #return render_template('index.html', user="", data={'age':, 'snack':, 'gender':})
@@ -44,7 +45,12 @@ def menu_table():
 
 @app.route("/meal")
 def enterMeal():
-    return render_template('meal.html')
+    choice=request.args.to_dict()
+    if not choice:  #처음 밥먹일 때
+        return render_template('meal.html',myDog=dogToDict(myDog))
+    else:           #밥먹인 후 지켜볼지 다른거 할지 선택
+        return render_template('afterMeal.html',choice=choice,myDog=dogToDict(myDog))
+
 
 @app.route("/goWalk")
 def enterGoWalk():
