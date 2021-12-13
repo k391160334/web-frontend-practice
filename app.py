@@ -31,5 +31,18 @@ def menu_table():
 def enterMeal():
     return render_template('meal.html')
 
+@app.route("/goWalk")
+def enterMeal():
+    return render_template('goWalk.html')
+
+@app.route("/snack")
+def enterMeal():
+    return render_template('snack.html')
+
+@app.route("/ending")
+def enterMeal():
+    return render_template('ending.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
