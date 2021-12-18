@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="result"></div>
+        <div class="endEating">
+            {{myDog['name']}}(이)가 밥을 다 먹었습니다.
+            <form class="" action="/menu_table" method="get">
+                <button type="submit" name="menuBtn">메뉴</button>
+            </form>
+        </div>
+        <script type="text/javascript">
+            const choice={{choice|tojson|safe}};
+            const myDog={{myDog|tojson|safe}};
+            const result=document.querySelector('.result');
+            if(choice['choiceBtn']=='1'){
+                result.innerText=myDog['mbti'][2]=='F'?'주인이심심한가봐\n내가 놀아줘야징':'밥 먹는데 걸리적거리게\n왜 서있는거야!';
+            }
+        </script>
+    </body>
+</html>
