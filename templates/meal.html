@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
+    <div class="feedIntro">
+      {{myDog['name']}}(이)에게 밥을 줍니다.
+    </div>
     <div class="feedStart"></div>
     <div class="menu">
       {{myDog['name']}}(이)가 밥을 먹기 시작합니다.<br>
@@ -16,7 +19,8 @@
     <script type="text/javascript">
       const myDog={{myDog|tojson|safe}};
       const feedStartContainer=document.querySelector(".feedStart");
-      feedStartContainer.innerText=myDog['mbti'][0]=='E'?'좋아!!':'부담스러워서 못 먹겠어ㅜㅜ';
+      feedStartContainer.innerText+=myDog['name']+': '
+      feedStartContainer.innerText+=myDog['mbti'][0]=='E'?'좋아!!':'부담스러워서 못 먹겠어ㅜㅜ';
     </script>
   </body>
 </html>

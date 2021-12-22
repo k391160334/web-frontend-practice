@@ -53,12 +53,12 @@ class Main_story:
         print("\n{}(이)에게 밥을 줍니다.".format(self.dog.getname()))   #meal.html
         print("\n{}: ".format(self.dog.getname()),end="")
         meal=feed(self.dog.getmbti())
-        meal.feedstart()                                               #feedStart.html, js
+        meal.feedstart()
         print("\n{}(이)가 밥을 먹기 시작합니다.".format(self.dog.getname()))
         print("1. 계속 서서 강아지가 밥 먹는 모습을 바라본다.")
         print("2. {}(이)가 편하게 밥먹을 수 있도록 다른 일을 한다.".format(self.dog.getname()))
         a=int(input("Enter: "))
-        if a==1:
+        if a==1:                                                        #aftermeal.html
             print("\n{}: ".format(self.dog.getname()),end="")
             meal.act()
         print("\n{}(이)가 밥을 다 먹었습니다.".format(self.dog.getname()))
