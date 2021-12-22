@@ -58,13 +58,14 @@ class Main_story:
         print("1. 계속 서서 강아지가 밥 먹는 모습을 바라본다.")
         print("2. {}(이)가 편하게 밥먹을 수 있도록 다른 일을 한다.".format(self.dog.getname()))
         a=int(input("Enter: "))
-        if a==1:                                                        #aftermeal.html
+        if a==1:                                                        #afterMeal.html
             print("\n{}: ".format(self.dog.getname()),end="")
             meal.act()
         print("\n{}(이)가 밥을 다 먹었습니다.".format(self.dog.getname()))
         self.menu_table()
+
     def Go_walk(self):
-        print("\n{}: ".format(self.dog.getname()),end="")
+        print("\n{}: ".format(self.dog.getname()),end="")               #goWalk.html
         gowalk=walk(self.dog.getmbti())
         gowalk.walkstart()
         print("\n{}(이)가 빨리 가기 시작합니다. 당신의 행동을 선택하세요.".format(self.dog.getname()))
@@ -72,7 +73,7 @@ class Main_story:
         print("2. 목줄 당기기")
         print("3. 그냥 가기")
         a=int(input("Enter: "))
-        if a==1:
+        if a==1:                                                        #fastWalk.html
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.say()
         if a==2:
@@ -82,7 +83,7 @@ class Main_story:
         print("1. 사진찍기")
         print("2. 그냥 가기")
         b=int(input("Enter: "))
-        if b==1:
+        if b==1:                                                        #parkWalk.h
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.photo()
         print("\n공원을 거닐다 다른 강아지를 만났습니다.")
@@ -90,7 +91,7 @@ class Main_story:
         print("1. 맞아요~~ 하면서 동의한다.")
         print("2. 에이~ 그정도는 아니에요. 하면서 부정한다.")
         c=int(input("Enter: "))
-        if c==1:
+        if c==1:                                                        #complimentWalk.html
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.agree()
         if c==2:
@@ -100,7 +101,7 @@ class Main_story:
         print("1. 함께 산책하기")
         print("2. 거절하기")
         d=int(input("Enter: "))
-        if d==1:
+        if d==1:                                                        #walkTogether.html
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.friend()
         elif d==2:

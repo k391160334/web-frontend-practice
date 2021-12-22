@@ -54,7 +54,18 @@ def enterMeal():
 
 @app.route("/goWalk")
 def enterGoWalk():
-    return render_template('goWalk.html')
+    choice=request.args.to_dict()
+    if 'fastWalkBtn' in choice: #강아지가 빠르게 걸을 때
+        return render_template('fastWalk.html',choice=choice,myDog=dogToDict(myDog))
+    elif 'parkWalkBtn' in choice:   #공원이 나왔을 때
+        return render_template('parkWalk.html',choice=choice,myDog=dogToDict(myDog))
+    elif 'complimentWalkBtn' in choice:   #칭찬들었을 때
+        return render_template('complimentWalk.html',choice=choice,myDog=dogToDict(myDog))
+    elif 'walkTogetherBtn' in choice:   #함께 걷자고할 때
+        return render_template('walkTogether.html',choice=choice,myDog=dogToDict(myDog))
+    else:   #처음 산책할 때
+        return render_template('goWalk.html',myDog=dogToDict(myDog))
+    
 
 @app.route("/snack")
 def enterSnack():

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="result"></div>
+    <div class="menu">
+      {{myDog['name']}}(이)와 산책을 하던 도중 예쁜 공원이 나왔습니다.<br>
+      <form class="menu" action="/goWalk" method="get">
+        <button type="submit" name="parkWalkBtn" value=1>사진 찍기</button>
+        <button type="submit" name="parkWalkBtn" value=2>그냥 가기</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      const choice={{choice|tojson|safe}};
+      const myDog={{myDog|tojson|safe}};
+      const result=document.querySelector('.result');
+      if(choice['fastWalkBtn']=='1'){  //say()
+          result.innerText+=myDog['name']+': ';
+          result.innerText+=myDog['mbti'][2]=='F'?'내가 너무 빨리 가나? 힘들었구나!':'뭐라는거야? 간식 주려고?';
+      }
+      else if(choice['fastWalkBtn']=='2'){  //rope()
+          result.innerText+=myDog['name']+': ';
+          result.innerText+=myDog['mbti'][2]=='F'?'아이고, 힘들었나보네!':'줄 당기지 말고 늘려! 힘드니?';
+      }
+    </script>
+  </body>
+</html>
