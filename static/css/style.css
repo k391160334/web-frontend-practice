@@ -1,0 +1,30 @@
+body {
+    margin: 100px auto;
+}
+
+h1 {
+    font-family: 'Gowun Dodum', sans-serif;
+    text-align: center;
+}
+
+.margin {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 20px;
+    margin: auto;
+}
+
+.inputDiv, .flex {
+    width: 300px;
+    padding: 10px;
+}
+
+.submitDiv_margin {
+    margin:auto;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.submitDiv_margin > button {
+    margin: 10px;
+    padding: 10px;
+}
+

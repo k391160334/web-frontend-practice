@@ -4,44 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <Link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>우리 강아지의 MBTI는?</title>
+    <Link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>게임 이름</h1>
+    <h1>우리집 강쥐의<br>MBTI 유형 테스트</h1>
     <form class="puppyInfo" action="/" method="post">
         <div class="margin" style="width:300px;">
-            <div class="inputDiv flex">
-              <label for="userName">플레이어 이름:</label>
-              <input type="text" name="userName">
+            <div class="inputDiv">
+                <label for="userName">플레이어 이름:</label>
+                <input type="text" name="userName">
             </div>
-            <div class="inputDiv flex">
-              <label for="dogName">강아지 이름:</label>
-              <input type="text" name="dogName">
+            <div class="inputDiv">
+                <label for="dogName">강아지 이름:</label>
+                <input type="text" name="dogName">
             </div>
-            <div class="inputDiv flex">
-              <label for="age">나이:</label>
-              <input type="text" name="age">
+
+            <!---
+            <div class="inputDiv_flex">
+                <label for="age">나이:</label>
+                <input type="text" name="age">
             </div>
-            <div class="inputDiv flex">
-              <label for="snack">좋아하는 간식:</label>
-              <input type="text" name="snack">
+            <div class="inputDiv_flex">
+                <label for="snack">좋아하는 간식:</label>
+                <input type="text" name="snack">
             </div>
-            <div class="inputDiv flex">
-              <label for="gender">성별:</label>
-              <input type="text" name="gender">
+            <div class="inputDiv_flex">
+                <label for="gender">성별:</label>
+                <input type="text" name="gender">
             </div>
-            <div class="submitDiv margin">
-              <button class="" type="submit">제출</button>
+            -->
+
+            <div class="submitDiv">
+                <button class="" type="submit">제출</button>
             </div>
         </div>
     </form>
-<!--
-이름 : user
-나이 : data.age
-좋아하는 간식 : data.snack
-성별 : data.gender
--->
-
 </body>
 </html>
