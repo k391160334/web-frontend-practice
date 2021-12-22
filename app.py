@@ -16,9 +16,9 @@ class Dog:
     def getmbti(self):
         return self.mbti
 userName=''
-age=0
+'''age=0
 snack=''
-gender=''
+gender='''''
 myDog=Dog('')
 def dogToDict(d):
     return {'name':d.getname(),'mbti':d.getmbti()}
@@ -30,12 +30,12 @@ def home():
         return render_template('index.html')
     else:
         # 입력받은 데이터를 전역변수에 저장
-        global userName,age,snack,gender,myDog
+        global userName,myDog
         userName=request.form['userName']
         myDog=Dog(request.form['dogName'])
-        age=request.form['age']
+        '''age=request.form['age']
         snack=request.form['snack']
-        gender=request.form['gender']
+        gender=request.form['gender']'''
         # startGame 페이지 띄우기
         return redirect(url_for('menu_table'))
 
