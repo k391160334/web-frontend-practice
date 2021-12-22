@@ -113,7 +113,7 @@ class Main_story:
         self.menu_table()
 
     def Snack(self):
-        print("\n{}(이)에게 간식을 줍니다.".format(self.dog.getname()))
+        print("\n{}(이)에게 간식을 줍니다.".format(self.dog.getname()))  #snack.html
         print("\n{}: ".format(self.dog.getname()),end="")
         feed_snack=feed(self.dog.getmbti())
         feed_snack.snack()

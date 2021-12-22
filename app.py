@@ -65,11 +65,11 @@ def enterGoWalk():
         return render_template('walkTogether.html',choice=choice,myDog=dogToDict(myDog))
     else:   #처음 산책할 때
         return render_template('goWalk.html',myDog=dogToDict(myDog))
-    
+
 
 @app.route("/snack")
 def enterSnack():
-    return render_template('snack.html')
+    return render_template('snack.html',myDog=dogToDict(myDog))
 
 @app.route("/ending")
 def enterEnding():
