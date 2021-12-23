@@ -46,6 +46,7 @@ def home():
 
 @app.route("/menu_table")
 def menu_table():
+    print(myDog.getmbti())
     return render_template('menu_table.html',dogName=myDog.getname())
 
 @app.route("/meal")
@@ -76,10 +77,20 @@ def enterGoWalk():
 def enterSnack():
     return render_template('snack.html',myDog=dogToDict(myDog))
 
-@app.route("/ending")
+@app.route("/ending",methods=['GET','POST'])
 def enterEnding():
-    return render_template('ending.html')
-
+    if request.method=='GET':
+        return render_template('ending.html',myDog=dogToDict(myDog))
+    else:
+        submittedRes=''
+        submittedRes+='I' if 'focus' in str(request.form) else 'E'
+        submittedRes+='N' if 'information' in str(request.form) else 'S'
+        submittedRes+='F' if 'decision' in str(request.form) else 'T'
+        submittedRes+='P' if 'live' in str(request.form) else 'J'
+        if myDog.getmbti()==submittedRes:
+            return render_template('correct.html',myDog=dogToDict(myDog))
+        else:
+            return render_template('wrong.html',myDog=dogToDict(myDog))
 
 if __name__ == "__main__":
     app.run(debug=True)

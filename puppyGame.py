@@ -118,7 +118,7 @@ class Main_story:
         feed_snack=feed(self.dog.getmbti())
         feed_snack.snack()
         self.menu_table()
-    def Ending(self):
+    def Ending(self):   #ending.html
         print("\n오늘 하루는 즐거우셨나요?")
         print("{}(이)를 데려가기 위한 마지막 절차가 남았습니다.".format(self.dog.getname()))
         print("정답을 맞추실 경우에만 {}(을)를 입양해 가실 수 있습니다.".format(self.dog.getname()))
@@ -134,9 +134,9 @@ class Main_story:
         d=input("Enter: ")
         answer=a+b+c+d
         if self.dog.getmbti()==answer:
-            self.Correct()
+            self.Correct()  #correct.html
         else:
-            self.Wrong()
+            self.Wrong()    #wrong.html
     def Correct(self):
         print("\n정답입니다!!!")
         print("{}(이)를 데려가실 수 있습니다. 축하드립니다!!".format(self.dog.getname()))
