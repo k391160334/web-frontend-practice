@@ -22,7 +22,12 @@ gender='''''
 myDog=Dog('')
 def dogToDict(d):
     return {'name':d.getname(),'mbti':d.getmbti()}
-@app.route("/",methods=['GET','POST'])
+
+@app.route("/")
+def intro():
+    return render_template('intro.html')
+
+@app.route("/home",methods=['GET','POST'])
 def home():
     #return render_template('index.html', user="", data={'age':, 'snack':, 'gender':})
     if request.method=='GET':
