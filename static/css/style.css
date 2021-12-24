@@ -21,7 +21,7 @@ label {
 }
 
 input[type=text] {
-    width: 355px;
+    width: 200px;
     height: 100%;
     padding: 10px;
     border: 2px solid #aaa;
