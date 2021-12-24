@@ -17,6 +17,10 @@ input[type=text] {
     width:100%;
 }
 
+.inputDiv {
+    padding: 10px;
+}
+
 .submitDiv {
     margin:auto;
     font-family: 'Gowun Dodum', sans-serif;
