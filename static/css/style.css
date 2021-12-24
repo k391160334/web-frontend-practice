@@ -13,10 +13,12 @@ h1 {
     margin: auto;
 }
 
+input[type=text] {
+    width:100%;
+}
+
 .inputDiv {
     padding: 10px;
-    width: 100%;
-    height:100%;
 }
 
 .submitDiv {
