@@ -1,5 +1,5 @@
 body {
-    margin: auto;
+    margin: 100px auto;
 }
 
 h1 {
@@ -14,8 +14,11 @@ h1 {
 }
 
 .inputDiv {
-    width: 300px;
     padding: 10px;
+}
+
+.inputDiv > userName {
+    width: calc(400px-120px);
 }
 
 .submitDiv {
