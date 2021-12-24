@@ -18,12 +18,12 @@ h1 {
     padding: 10px;
 }
 
-.submitDiv_margin {
+.submitDiv {
     margin:auto;
     font-family: 'Gowun Dodum', sans-serif;
 }
 
-.submitDiv_margin > button {
+.submitDiv > button {
     margin: 10px;
     padding: 10px;
 }
