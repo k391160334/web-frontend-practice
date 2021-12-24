@@ -17,10 +17,6 @@ h1 {
     padding: 10px;
 }
 
-.inputDiv > userName {
-    width: calc(400px-120px);
-}
-
 .submitDiv {
     margin:auto;
     font-family: 'Gowun Dodum', sans-serif;
