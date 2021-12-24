@@ -20,7 +20,7 @@ label {
 }
 
 input[type=text] {
-    width:calc(500px-125px);
+    width: 100%;
     height: 100%;
     padding: 10px;
     border: 2px solid #aaa;
