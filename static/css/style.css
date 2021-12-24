@@ -20,6 +20,7 @@ input[type=text] {
     border: 2px solid;
     border-radius: 8px;
     margin: auto;
+    box-sizing: border-box;
 }
 
 .inputDiv {
