@@ -1,3 +1,4 @@
+
 import random
 
 
@@ -21,7 +22,7 @@ class Main_story:
         dog_name=input("강아지 이름을 입력하세요: ")
         self.dog=Dog(dog_name)
         self.intro()
-    def intro(self):
+    def intro(self):    #menu_table에 포함
         print("\n당신과 오늘 함께할 강아지 {}입니다.".format(self.dog.getname()))
         print("나이: {}".format(3))
         print("좋아하는 간식: {}".format("뼈다귀"))
@@ -52,18 +53,19 @@ class Main_story:
         print("\n{}(이)에게 밥을 줍니다.".format(self.dog.getname()))   #meal.html
         print("\n{}: ".format(self.dog.getname()),end="")
         meal=feed(self.dog.getmbti())
-        meal.feedstart()                                               #feedStart.html, js
+        meal.feedstart()
         print("\n{}(이)가 밥을 먹기 시작합니다.".format(self.dog.getname()))
         print("1. 계속 서서 강아지가 밥 먹는 모습을 바라본다.")
         print("2. {}(이)가 편하게 밥먹을 수 있도록 다른 일을 한다.".format(self.dog.getname()))
         a=int(input("Enter: "))
-        if a==1:
+        if a==1:                                                        #afterMeal.html
             print("\n{}: ".format(self.dog.getname()),end="")
             meal.act()
         print("\n{}(이)가 밥을 다 먹었습니다.".format(self.dog.getname()))
         self.menu_table()
+
     def Go_walk(self):
-        print("\n{}: ".format(self.dog.getname()),end="")
+        print("\n{}: ".format(self.dog.getname()),end="")               #goWalk.html
         gowalk=walk(self.dog.getmbti())
         gowalk.walkstart()
         print("\n{}(이)가 빨리 가기 시작합니다. 당신의 행동을 선택하세요.".format(self.dog.getname()))
@@ -71,7 +73,7 @@ class Main_story:
         print("2. 목줄 당기기")
         print("3. 그냥 가기")
         a=int(input("Enter: "))
-        if a==1:
+        if a==1:                                                        #fastWalk.html
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.say()
         if a==2:
@@ -81,7 +83,7 @@ class Main_story:
         print("1. 사진찍기")
         print("2. 그냥 가기")
         b=int(input("Enter: "))
-        if b==1:
+        if b==1:                                                        #parkWalk.h
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.photo()
         print("\n공원을 거닐다 다른 강아지를 만났습니다.")
@@ -89,7 +91,7 @@ class Main_story:
         print("1. 맞아요~~ 하면서 동의한다.")
         print("2. 에이~ 그정도는 아니에요. 하면서 부정한다.")
         c=int(input("Enter: "))
-        if c==1:
+        if c==1:                                                        #complimentWalk.html
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.agree()
         if c==2:
@@ -99,7 +101,7 @@ class Main_story:
         print("1. 함께 산책하기")
         print("2. 거절하기")
         d=int(input("Enter: "))
-        if d==1:
+        if d==1:                                                        #walkTogether.html
             print("\n{}: ".format(self.dog.getname()),end="")
             gowalk.friend()
         elif d==2:
@@ -111,12 +113,12 @@ class Main_story:
         self.menu_table()
 
     def Snack(self):
-        print("\n{}(이)에게 간식을 줍니다.".format(self.dog.getname()))
+        print("\n{}(이)에게 간식을 줍니다.".format(self.dog.getname()))  #snack.html
         print("\n{}: ".format(self.dog.getname()),end="")
         feed_snack=feed(self.dog.getmbti())
         feed_snack.snack()
         self.menu_table()
-    def Ending(self):
+    def Ending(self):   #ending.html
         print("\n오늘 하루는 즐거우셨나요?")
         print("{}(이)를 데려가기 위한 마지막 절차가 남았습니다.".format(self.dog.getname()))
         print("정답을 맞추실 경우에만 {}(을)를 입양해 가실 수 있습니다.".format(self.dog.getname()))
@@ -132,9 +134,9 @@ class Main_story:
         d=input("Enter: ")
         answer=a+b+c+d
         if self.dog.getmbti()==answer:
-            self.Correct()
+            self.Correct()  #correct.html
         else:
-            self.Wrong()
+            self.Wrong()    #wrong.html
     def Correct(self):
         print("\n정답입니다!!!")
         print("{}(이)를 데려가실 수 있습니다. 축하드립니다!!".format(self.dog.getname()))

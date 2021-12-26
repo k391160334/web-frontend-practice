@@ -5,6 +5,22 @@
     <title></title>
   </head>
   <body>
-    MEAL
+    <div class="feedIntro">
+      {{myDog['name']}}(이)에게 밥을 줍니다.
+    </div>
+    <div class="feedStart"></div>
+    <div class="menu">
+      {{myDog['name']}}(이)가 밥을 먹기 시작합니다.<br>
+      <form class="menu" action="/meal" method="get">
+        <button type="submit" name="choiceBtn" value=1>지켜보기</button>
+        <button type="submit" name="choiceBtn" value=2>다른 일 하기</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      const myDog={{myDog|tojson|safe}};
+      const feedStartContainer=document.querySelector(".feedStart");
+      feedStartContainer.innerText+=myDog['name']+': '  //feedstart()
+      feedStartContainer.innerText+=myDog['mbti'][0]=='E'?'좋아!!':'부담스러워서 못 먹겠어ㅜㅜ';
+    </script>
   </body>
 </html>

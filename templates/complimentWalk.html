@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="result"></div>
+    <div class="menu">
+      다른 강아지의 주인이 함께 산책하는 것이 어떻냐고 묻습니다.<br>
+      <form class="menu" action="/goWalk" method="get">
+        <button type="submit" name="walkTogetherBtn" value=1>함께 산책하기</button>
+        <button type="submit" name="walkTogetherBtn" value=2>거절하기</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      const choice={{choice|tojson|safe}};
+      const myDog={{myDog|tojson|safe}};
+      const result=document.querySelector('.result');
+      result.innerText+=myDog['name']+': ';
+      if(choice['complimentWalkBtn']=='1'){  //agree()
+          result.innerText+=myDog['mbti'][1]=='S'?'나 보고 하는 말 아닌 것 같은데? 이 친구 현실 감각이 없구먼~':'역시 난 인스타 스타가 될 강아지야~ 훗!';
+      }
+      else{  //disagree()
+          result.innerText+=myDog['mbti'][1]=='S'?'그러게 현실적으로 보면 나한테 하는 말이 아닐텐데~':'당연히 나보고 하는 말이잖아!! 인스타 스타가 될 강아지를 알아보시네~';
+      }
+    </script>
+  </body>
+</html>
