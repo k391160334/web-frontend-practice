@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리집 강쥐의 MBTI는?</title>
     <Link rel="stylesheet" href="/static/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Gowun+Dodum&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="run_wrap">
+      <div class="header_wrap">
+        <div class="menu_bar">
+          <form class="top_menu">
+            <button type="button" name="exitBtn">게임 나가기</button>
+          </form>
+        </div>
+      </div>
+      <div class="center_wrap">
+        <div class="con_wrap">
+          <p>당신과 오늘 함께할 강아지 <strong>{{dogName}}</strong>입니다.<br><br>오늘 일정이 모두 끝나면<br><strong>{{dogName}}</strong>(을)를 입양하기 위한 간단한 테스트가 있으니<br><strong>{{dogName}}</strong>(이)의 성향을 잘 파악해 보시길 바랍니다.<br><br>그럼 <strong>{{dogName}}</strong>(이)와 오늘 하루 즐거운 시간 보내시기를 바랍니다.</p> 
+        </div>
+      </div>
+      <div class="menu_bar">
+        <form class="under_menu">
+          <button type="button" name="mealBtn" onclick="location.href='/meal'">밥</button>
+          <button type="button" name="goWalkBtn" onclick="location.href='/goWalk'">산책</button>
+          <button type="button" name="snackBtn" onclick="location.href='/snack'">간식</button>
+          <button type="button" name="endingBtn" onclick="location.href='/ending'">메뉴 종료</button>
+        </form>
+      </div>
+    </div>
     당신과 오늘 함께할 강아지 {{dogName}}입니다.<br>
     오늘 일정이 모두 끝나면 {{dogName}}(을)를 입양해가시기 위한 간단한 테스트가 있으니 {{dogName}}(이)의 성향을 잘 파악해 보시길 바랍니다.<br>
     그럼 {{dogName}}(이)와 오늘 하루 즐거운 시간 보내시기를 바랍니다.<br>

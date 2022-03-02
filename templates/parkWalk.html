@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리집 강쥐의 MBTI는?</title>
+    <Link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Gowun+Dodum&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="choice_wrap">
+      <div class="center_wrap">
+        <div class="asw_wrap">
+          <div class="result"></div>
+          <div class="menu">
+            <i><br>공원을 거닐다 다른 강아지를 만났습니다.<br>
+            다른 강아지의 주인이 <strong>{{myDog['name']}}</strong>(을)를 칭찬합니다.<br><br>당신의 반응을 고르세요.<br></i>
+          </div>
+        </div>
+        <div class="choice_bar">
+          <form class="menu" action="/goWalk" method="get">
+            <div class="chc_btn">
+              <button type="submit" name="complimentWalkBtn" value=1>"맞아요~~" 하면서 동의한다.</button>
+            <div class="chc_btn">
+              <button type="submit" name="complimentWalkBtn" value=2>"에이~ 그정도는 아니에요" 하면서 부정한다.</button>
+            </div>
+          </form>
+        </div>
+      </div>
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -20,7 +47,7 @@
       const result=document.querySelector('.result');
       if(choice['parkWalkBtn']=='1'){  //photo()
           result.innerText+=myDog['name']+': ';
-          result.innerText+=myDog['mbti'][1]=='S'?'인스타 올리려고? 인스타 중독이다...':'인스타 올리려고? 이러다 인스타 스타 강아지 되는거 아님? 막 간식 협찬도 들어오고, 방송출연도 하고, 약간 피곤해지겠지만 좋을 것 같은데';
+          result.innerText+=myDog['mbti'][1]=='S'?'인스타 올리려고? \n인스타 중독이다...':'인스타 올리려고? \n이러다 인스타 스타 강아지 되는거 아님? \n막 간식 협찬도 들어오고, 방송출연도 하고, \n약간 피곤해지겠지만 좋을 것 같은데';
       }
     </script>
   </body>
