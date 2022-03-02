@@ -28,6 +28,18 @@
           </form>
         </div>
       </div>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="result"></div>
+    <div class="menu">
+      공원을 거닐다 다른 강아지를 만났습니다.<br>
+      다른 강아지의 주인이 {{myDog['name']}}(을)를 칭찬합니다. 당신의 반응을 고르세요<br>
+      <form class="menu" action="/goWalk" method="get">
+        <button type="submit" name="complimentWalkBtn" value=1>맞아요~~ 하면서 동의한다.</button>
+        <button type="submit" name="complimentWalkBtn" value=2>에이~ 그정도는 아니에요. 하면서 부정한다.</button>
+      </form>
     </div>
     <script type="text/javascript">
       const choice={{choice|tojson|safe}};

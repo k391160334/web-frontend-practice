@@ -89,6 +89,10 @@
       -webkit-transition: .4s;
       transition: .4s;
       }
+      
+      input:checked + .slider {
+      /*background-color: #2196F3;*/
+      }
 
       input:focus + .slider {
       box-shadow: 0 0 1px #2196F3;
@@ -111,12 +115,13 @@
     </style>
   </head>
   <body>
-    <div class="run_wrap">
-      <div class="center_wrap">
-        <div class="con_wrap">
-          <p>오늘 하루는 즐거우셨나요?<br>    <strong>{{myDog['name']}}</strong>(이)를 데려가기 위한 마지막 절차가 남았습니다.<br>정답을 맞추실 경우에만 <strong>{{myDog['name']}}</strong>(을)를 입양해 가실 수 있습니다.<br>   퀴즈를 시작합니다.<br><strong>{{myDog['name']}}</strong>(이)의 성격을 맞추세요!<br></p>
-        </div>
-              <div class="">
+    <div class="">
+      오늘 하루는 즐거우셨나요?<br>
+      {{myDog['name']}}(이)를 데려가기 위한 마지막 절차가 남았습니다.<br>
+      정답을 맞추실 경우에만 {{myDog['name']}}(을)를 입양해 가실 수 있습니다.<br>
+      퀴즈를 시작합니다.<br>
+      {{myDog['name']}}(이)의 성격을 맞추세요!<br>
+      <div class="">
         <form class="" action="/ending" method="post">
           <div class="focus">
             {{myDog['name']}}(이)는 외향형 일까요 내향형 일까요?
@@ -148,7 +153,6 @@
           </div>
           <button type="submit">제출</button>
         </form>
-      </div>
       </div>
     </div>
   </body>

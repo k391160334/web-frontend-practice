@@ -31,6 +31,18 @@
             </form>
           </div>
       </div>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="walkStart"></div>
+    <div class="menu">
+      {{myDog['name']}}(이)가 빨리 가기 시작합니다. 당신의 행동을 선택하세요.<br>
+      <form class="menu" action="/goWalk" method="get">
+        <button type="submit" name="fastWalkBtn" value=1>{{myDog['name']}}(이)에게 말걸기</button>
+        <button type="submit" name="fastWalkBtn" value=2>목줄 당기기</button>
+        <button type="submit" name="fastWalkBtn" value=3>그냥 가기</button>
+      </form>
     </div>
     <script type="text/javascript">
       const myDog={{myDog|tojson|safe}};

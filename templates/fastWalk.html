@@ -28,6 +28,19 @@
           </form>
         </div>
       </div>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="result"></div>
+    <div class="menu">
+      {{myDog['name']}}(이)와 산책을 하던 도중 예쁜 공원이 나왔습니다.<br>
+      <form class="menu" action="/goWalk" method="get">
+        <button type="submit" name="parkWalkBtn" value=1>사진 찍기</button>
+        <button type="submit" name="parkWalkBtn" value=2>그냥 가기</button>
+      </form>
     </div>
     <script type="text/javascript">
       const choice={{choice|tojson|safe}};

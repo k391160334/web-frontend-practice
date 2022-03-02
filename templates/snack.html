@@ -25,6 +25,13 @@
           </div>
         </div>
       </div>
+    <div class="snack">
+      {{myDog['name']}}(이)에게 간식을 줍니다.<br>
+    </div>
+    <div class="endSnack">
+      <form class="" action="/menu_table" method="get">
+        <button type="submit">메뉴</button>
+      </form>
     </div>
     <script type="text/javascript">
       const myDog={{myDog|tojson|safe}};
