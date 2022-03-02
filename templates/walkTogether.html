@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리집 강쥐의 MBTI는?</title>
+    <Link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Gowun+Dodum&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="result"></div>
-    <div class="endWalking">
-      <div class="text">
-        저녁 시간이 다가옵니다. {{myDog['name']}}(을)를 데리고 집으로 돌아갑니다.<br>
+    <div class="choice_wrap">
+      <div class="center_wrap">
+        <div class="asw_wrap">
+          <div class="result"></div>
+          <div class="endWalking"></div>
+            <br><i>저녁 시간이 다가옵니다. <br><strong>{{myDog['name']}}</strong>(을)를 데리고 집으로 돌아갑니다.</i><br><br>
+          <div class="text"></div>
+        </div>
+        <div class="choice_bar">
+          <form class="" action="/menu_table" method="get">
+            <div class="chc_btn">
+              <button type="submit">메뉴</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <form class="" action="/menu_table" method="get">
-        <button type="submit">메뉴</button>
-      </form>
     </div>
     <script type="text/javascript">
       const choice={{choice|tojson|safe}};
@@ -28,7 +40,7 @@
 
       const endWalkingTextContainer=document.querySelector('.text');
       endWalkingTextContainer.innerText+=myDog['name']+': ';  //home()
-      endWalkingTextContainer.innerText+=myDog['mbti'][3]=='P'?'집에가면 뭐하지? 무계획 인생~':'짐에가서 저녁 먹으면 딱이겠다!';
+      endWalkingTextContainer.innerText+=myDog['mbti'][3]=='P'?'집에가면 뭐하지? 무계획 인생~':'집에가서 저녁 먹으면 딱이겠다!';
     </script>
   </body>
 </html>

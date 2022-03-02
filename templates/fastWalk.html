@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리집 강쥐의 MBTI는?</title>
+    <Link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Gowun+Dodum&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="result"></div>
-    <div class="menu">
-      {{myDog['name']}}(이)와 산책을 하던 도중 예쁜 공원이 나왔습니다.<br>
-      <form class="menu" action="/goWalk" method="get">
-        <button type="submit" name="parkWalkBtn" value=1>사진 찍기</button>
-        <button type="submit" name="parkWalkBtn" value=2>그냥 가기</button>
-      </form>
+    <div class="choice_wrap">
+      <div class="center_wrap">
+        <div class="asw_wrap">
+          <div class="result"></div>
+          <div class="menu">
+            <br><i><strong>{{myDog['name']}}</strong>(이)와 산책을 하던 도중 예쁜 공원이 나왔습니다.</i><br>
+          </div>
+        </div>
+        <div class="choice_bar">
+          <form class="menu" action="/goWalk" method="get">
+            <div class="chc_btn">
+              <button type="submit" name="parkWalkBtn" value=1>사진 찍기</button>
+            </div>
+            <div class="chc_btn">
+              <button type="submit" name="parkWalkBtn" value=2>그냥 가기</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <script type="text/javascript">
       const choice={{choice|tojson|safe}};

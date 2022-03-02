@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우리 강아지의 MBTI는?</title>
+    <title>우리집 강쥐의 MBTI는?</title>
     <Link rel="stylesheet" href="/static/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Gowun+Dodum&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>우리집 강쥐의<br>MBTI 유형 테스트</h1>
-    <form class="puppyInfo" action="/home" method="post">
-        <div class="margin">
-
-            <div class="inputDiv">
-                <label for="userName">플레이어 이름:</label>
-                <input type="text" name="userName" placeholder="주인님의 이름을 입력하세요." autofocus required>
-            </div>
-            <div class="inputDiv">
-                <label for="dogName">강아지 이름:</label>
-                <input type="text" name="dogName" placeholder="강아지의 이름을 입력하세요." required>
-            </div>
-            <div class="submitDiv">
-                <button class="" type="submit">제출</button>
+    <div class="intro_wrap">
+        <div class="header_wrap">
+            <div class="top_title">
+                <h1>우리집 강쥐의<br>MBTI 유형 테스트</h1>
             </div>
         </div>
-    </form>
+        <div class="center_wrap">
+            <div class="con_wrap">
+                <form class="puppyInfo" action="/home" method="post">
+                    <div class="top_txt">
+                        <label for="userName">플레이어 이름:</label>
+                            <input type="text" name="userName" placeholder="주인님의 이름을 입력하세요." autofocus required>
+                    </div>
+                    <div class="top_txt">
+                        <label for="dogName">강아지 이름:</label>
+                            <input type="text" name="dogName" placeholder="강아지의 이름을 입력하세요." required>
+                    </div>
+                </div>
+            <div class="btn_wrap">
+                <button class="" type="submit">제출</button>
+            </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
