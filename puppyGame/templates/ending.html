@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      /* The switch - the box around the slider */
+      .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      }
+      label:before,
+      label:after{
+          position: absolute;
+          top: 0;
+          width: 34px;
+          font-size: 11px;
+          line-height: 34px;
+          color: #fff;
+          text-align: center;
+      }
+
+      .focus label:before {
+          left: 0;
+          content: 'I';
+      }
+      .focus label:after {
+          right: 0;
+          content: 'E';
+      }
+      .information label:before {
+          left: 0;
+          content: 'N';
+      }
+
+      .information label:after {
+          right: 0;
+          content: 'S';
+      }
+      .decision label:before {
+          left: 0;
+          content: 'F';
+      }
+
+      .decision label:after {
+          right: 0;
+          content: 'T';
+      }
+      .live label:before {
+          left: 0;
+          content: 'P';
+      }
+
+      .live label:after {
+          right: 0;
+          content: 'J';
+      }
+
+      /* Hide default HTML checkbox */
+      .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+
+      /* The slider */
+      .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+      }
+
+      .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      }
+      
+      input:checked + .slider {
+      /*background-color: #2196F3;*/
+      }
+
+      input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+      }
+
+      input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+      border-radius: 34px;
+      }
+
+      .slider.round:before {
+      border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      오늘 하루는 즐거우셨나요?<br>
+      {{myDog['name']}}(이)를 데려가기 위한 마지막 절차가 남았습니다.<br>
+      정답을 맞추실 경우에만 {{myDog['name']}}(을)를 입양해 가실 수 있습니다.<br>
+      퀴즈를 시작합니다.<br>
+      {{myDog['name']}}(이)의 성격을 맞추세요!<br>
+      <div class="">
+        <form class="" action="/ending" method="post">
+          <div class="focus">
+            {{myDog['name']}}(이)는 외향형 일까요 내향형 일까요?
+            <label class="switch">
+              <input type="checkbox" name="focus">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="information">
+            {{myDog['name']}}(이)는 현실적 일까요 상상력이 풍부할까요?
+            <label class="switch">
+              <input type="checkbox" name="information">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="decision">
+            {{myDog['name']}}(이)는 이성적 일까요 감성적 일까요?
+            <label class="switch">
+              <input type="checkbox" name="decision">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="live">
+            {{myDog['name']}}(이)는 계획적 일까요 즉흥적 일까요
+            <label class="switch">
+              <input type="checkbox" name="live">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <button type="submit">제출</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
